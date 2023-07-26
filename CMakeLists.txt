@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8.3)
 
-project(brace_bottom_setup)
+project(brace_bottom_setup_brace)
 
 find_package(catkin REQUIRED)
 
