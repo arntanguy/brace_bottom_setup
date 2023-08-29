@@ -10,7 +10,7 @@
     name="spawn_model"
     pkg="gazebo_ros"
     type="spawn_model"
-    args="-file $(find brace_bottom_setup_brace)/urdf/brace_bottom_setup_brace.urdf -urdf -model brace_bottom_setup_brace"
+    args="-file $(find brace_bottom_setup)/urdf/brace_bottom_setup.urdf -urdf -model brace_bottom_setup"
     output="screen" />
   <node
     name="fake_joint_calibration"
