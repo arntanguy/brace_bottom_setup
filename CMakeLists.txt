@@ -3,17 +3,7 @@ cmake_policy(SET CMP0048 NEW)
 project(brace_bottom_setup VERSION 1.0.0)
 
 if(NOT DISABLE_ROS)
-  find_package(ament_cmake QUIET)
-  if(NOT ament_cmake_FOUND) # ROS1 package
-    message(WARNING "ament_cmake not found, trying to build with ROS1")
-    find_package(catkin REQUIRED)
-    catkin_package()
-    foreach(dir config launch meshes urdf)
-      install(DIRECTORY ${dir}/
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
-    endforeach(dir)
-    return()
-  endif()
+  find_package(ament_cmake REQUIRED)
 endif()
 
 if(NOT DISABLE_ROS)
@@ -43,5 +33,5 @@ install(DIRECTORY urdf/
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/urdf)
 
 if(NOT DISABLE_ROS)
-  ament_package(CONFIG_EXTRAS cmake/${PROJECT_NAME}_INSTALL_PREFIX.cmake)
+  ament_package(CONFIG_EXTRAS cmake/${PROJECT_NAME}_INSTALL_PREFIX.cmake) 
 endif()
